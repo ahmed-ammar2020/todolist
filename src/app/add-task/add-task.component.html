@@ -1,0 +1,37 @@
+<div class="container">
+  <form action="" [formGroup]="taskForm" (ngSubmit)="submitForm()">
+    <label for="todo" class="mat-h3">New Todo</label>
+    <div class="flex-container">
+      <input
+        id="todo"
+        type="text"
+        formControlName="taskContent"
+        placeholder="Enter a new task"
+        autocomplete="off"
+      />
+      <button
+        [disabled]="taskForm.invalid"
+        type="submit"
+        mat-flat-button
+        color="accent"
+      >
+        + Add
+      </button>
+    </div>
+    <ng-container
+      *ngIf="
+        taskForm.controls.taskContent.errors &&
+        taskForm.controls.taskContent.touched &&
+        taskForm.controls.taskContent.dirty
+      "
+    >
+      <p *ngIf="taskForm.controls.taskContent.errors.minlength">
+        Sorry, you should at least enter 3 characters
+      </p></ng-container
+    >
+  </form>
+  <app-tasks [tasks]="tasks"></app-tasks>
+</div>
+<!--
+<div>form Content: {{ taskForm.value | json }}</div>
+<div>Is form Valid: {{ taskForm.valid }}</div> -->

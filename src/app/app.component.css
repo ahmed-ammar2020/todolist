@@ -1,0 +1,18 @@
+.vh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  background: rgb(204, 48, 238);
+  background: linear-gradient(90deg, rgba(204, 48, 238, 1) 0%, rgba(113, 197, 255, 1) 100%);
+}
+
+.vh p {
+  margin: 0 !important;
+  color: #fff;
+  font-weight: 500;
+}
+
+.container {
+  padding-bottom: 50px;
+}

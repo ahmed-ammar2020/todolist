@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Edit Todo</h2>
+
+<form action="" [formGroup]="editForm">
+  <input type="text" formControlName="editedTask" />
+  <ng-container
+    *ngIf="
+      editForm.controls.editedTask.errors &&
+      editForm.controls.editedTask.touched &&
+      editForm.controls.editedTask.dirty
+    "
+  >
+    <p *ngIf="editForm.controls.editedTask.errors.minlength">
+      Sorry, you should at least enter 3 characters
+    </p></ng-container
+  >
+  <mat-dialog-actions align="end">
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="editForm.controls.editedTask.value"
+    >
+      Edit
+    </button>
+    <button mat-raised-button color="accent" [mat-dialog-close]="false">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>

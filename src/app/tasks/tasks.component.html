@@ -1,0 +1,18 @@
+<div *ngFor="let task of tasks; let i = index" class="container">
+  <mat-checkbox
+    (change)="checkTask($event, i)"
+    [checked]="checkedValues[i]"
+    class="checkbox-container"
+  >
+    {{ task }}
+  </mat-checkbox>
+  <div class="btns">
+    <button mat-icon-button (click)="openEditDialog(i)">
+      <mat-icon>mode_edit_outline</mat-icon>
+    </button>
+    <button mat-icon-button (click)="openDeleteDialog(i)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+</div>

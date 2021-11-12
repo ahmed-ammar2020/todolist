@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+}
+
+.checkbox-container {
+  padding: 30px 0;
+}
+
+.btns {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+}
+
+.container:hover .btns {
+  display: block;
+}
